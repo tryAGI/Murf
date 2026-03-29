@@ -1,6 +1,9 @@
 # Microsoft.Extensions.AI Integration
 
-The Murf SDK provides `AIFunction` tools that integrate with [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI) (MEAI), enabling Murf AI capabilities as tools with any `IChatClient`.
+!!! tip "Cross-SDK comparison"
+    See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
+
+The Murf SDK provides `AIFunction` tool wrappers compatible with [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai). These tools can be used with any `IChatClient` to give AI models access to Murf AI's text-to-speech generation, voice listing, and translation capabilities.
 
 ## Available Tools
 
