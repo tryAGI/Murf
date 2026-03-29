@@ -61,13 +61,13 @@ namespace Murf
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDubbingJobWithProjectIdRequest" /> class.
         /// </summary>
+        /// <param name="projectId">
+        /// Your Project Id
+        /// </param>
         /// <param name="file">
         /// The file to upload
         /// </param>
         /// <param name="fileUrl"></param>
-        /// <param name="projectId">
-        /// Your Project Id
-        /// </param>
         /// <param name="webhookUrl"></param>
         /// <param name="fileName"></param>
         /// <param name="priority">
@@ -86,9 +86,9 @@ namespace Murf
             global::Murf.V1MurfdubJobsCreateWithProjectIdPostRequestBodyContentMultipartFormDataSchemaPriority? priority,
             string? webhookSecret)
         {
-            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.File = file;
             this.FileUrl = fileUrl;
+            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.WebhookUrl = webhookUrl;
             this.FileName = fileName;
             this.Priority = priority;

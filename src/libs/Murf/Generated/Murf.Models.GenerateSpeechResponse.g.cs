@@ -65,15 +65,15 @@ namespace Murf
         /// </summary>
         /// <param name="audioFile"></param>
         /// <param name="audioLengthInSeconds"></param>
+        /// <param name="remainingCharacterCount">
+        /// Remaining number of characters available for synthesis in the current billing cycle.
+        /// </param>
+        /// <param name="wordDurations"></param>
         /// <param name="consumedCharacterCount">
         /// Number of characters consumed so far in the current billing cycle.
         /// </param>
         /// <param name="encodedAudio"></param>
-        /// <param name="remainingCharacterCount">
-        /// Remaining number of characters available for synthesis in the current billing cycle.
-        /// </param>
         /// <param name="warning"></param>
-        /// <param name="wordDurations"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -88,11 +88,11 @@ namespace Murf
         {
             this.AudioFile = audioFile ?? throw new global::System.ArgumentNullException(nameof(audioFile));
             this.AudioLengthInSeconds = audioLengthInSeconds;
-            this.RemainingCharacterCount = remainingCharacterCount;
-            this.WordDurations = wordDurations ?? throw new global::System.ArgumentNullException(nameof(wordDurations));
             this.ConsumedCharacterCount = consumedCharacterCount;
             this.EncodedAudio = encodedAudio;
+            this.RemainingCharacterCount = remainingCharacterCount;
             this.Warning = warning;
+            this.WordDurations = wordDurations ?? throw new global::System.ArgumentNullException(nameof(wordDurations));
         }
 
         /// <summary>

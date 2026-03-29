@@ -67,15 +67,15 @@ namespace Murf
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateDubbingJobRequest" /> class.
         /// </summary>
+        /// <param name="targetLocales">
+        /// List of target locales
+        /// </param>
         /// <param name="file">
         /// The file to upload
         /// </param>
         /// <param name="fileUrl"></param>
         /// <param name="sourceLocale">
         /// Source locale
-        /// </param>
-        /// <param name="targetLocales">
-        /// List of target locales
         /// </param>
         /// <param name="webhookUrl"></param>
         /// <param name="fileName"></param>
@@ -96,10 +96,10 @@ namespace Murf
             global::Murf.V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriority? priority,
             string? webhookSecret)
         {
-            this.TargetLocales = targetLocales ?? throw new global::System.ArgumentNullException(nameof(targetLocales));
             this.File = file;
             this.FileUrl = fileUrl;
             this.SourceLocale = sourceLocale;
+            this.TargetLocales = targetLocales ?? throw new global::System.ArgumentNullException(nameof(targetLocales));
             this.WebhookUrl = webhookUrl;
             this.FileName = fileName;
             this.Priority = priority;

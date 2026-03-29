@@ -67,14 +67,14 @@ namespace Murf
         /// <summary>
         /// Initializes a new instance of the <see cref="DubJobStatusResponse" /> class.
         /// </summary>
-        /// <param name="projectId">
-        /// Your Project Id
-        /// </param>
         /// <param name="jobId">
         /// Your Job Id
         /// </param>
         /// <param name="status">
         /// Your Job Status
+        /// </param>
+        /// <param name="projectId">
+        /// Your Project Id
         /// </param>
         /// <param name="downloadDetails"></param>
         /// <param name="creditsUsed"></param>
@@ -94,9 +94,9 @@ namespace Murf
             string? failureReason,
             string? failureCode)
         {
+            this.ProjectId = projectId;
             this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.ProjectId = projectId;
             this.DownloadDetails = downloadDetails;
             this.CreditsUsed = creditsUsed;
             this.CreditsRemaining = creditsRemaining;

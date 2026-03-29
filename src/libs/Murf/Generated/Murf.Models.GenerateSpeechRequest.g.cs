@@ -127,6 +127,12 @@ namespace Murf
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateSpeechRequest" /> class.
         /// </summary>
+        /// <param name="text">
+        /// The text that is to be synthesised. e.g. 'Hello there [pause 1s] friend'
+        /// </param>
+        /// <param name="voiceId">
+        /// Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
+        /// </param>
         /// <param name="audioDuration">
         /// This parameter allows specifying the duration (in seconds) for the generated audio. If the value is 0, this parameter will be ignored. Only available for Gen2 model.
         /// </param>
@@ -172,15 +178,9 @@ namespace Murf
         /// <param name="style">
         /// The voice style to be used for voiceover generation.
         /// </param>
-        /// <param name="text">
-        /// The text that is to be synthesised. e.g. 'Hello there [pause 1s] friend'
-        /// </param>
         /// <param name="variation">
         /// Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.<br/>
         /// Default Value: 1
-        /// </param>
-        /// <param name="voiceId">
-        /// Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
         /// </param>
         /// <param name="wordDurationsAsOriginalText">
         /// If set to true, the word durations in response will return words as the original input text. (English only)<br/>
@@ -207,8 +207,6 @@ namespace Murf
             int? variation,
             bool? wordDurationsAsOriginalText)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
             this.AudioDuration = audioDuration;
             this.ChannelType = channelType;
             this.EncodeAsBase64 = encodeAsBase64;
@@ -221,7 +219,9 @@ namespace Murf
             this.Rate = rate;
             this.SampleRate = sampleRate;
             this.Style = style;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Variation = variation;
+            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
             this.WordDurationsAsOriginalText = wordDurationsAsOriginalText;
         }
 

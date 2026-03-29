@@ -60,18 +60,18 @@ namespace Murf
         /// <param name="projectId">
         /// Your Project Id
         /// </param>
+        /// <param name="dubbingType">
+        /// Dubbing Type
+        /// </param>
+        /// <param name="targetLocales">
+        /// List of target locales
+        /// </param>
         /// <param name="name">
         /// Project Name
         /// </param>
         /// <param name="description"></param>
         /// <param name="sourceLocale">
         /// Source Locale
-        /// </param>
-        /// <param name="dubbingType">
-        /// Dubbing Type
-        /// </param>
-        /// <param name="targetLocales">
-        /// List of target locales
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -85,11 +85,11 @@ namespace Murf
             string? sourceLocale)
         {
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
-            this.DubbingType = dubbingType;
-            this.TargetLocales = targetLocales ?? throw new global::System.ArgumentNullException(nameof(targetLocales));
             this.Name = name;
             this.Description = description;
             this.SourceLocale = sourceLocale;
+            this.DubbingType = dubbingType;
+            this.TargetLocales = targetLocales ?? throw new global::System.ArgumentNullException(nameof(targetLocales));
         }
 
         /// <summary>
