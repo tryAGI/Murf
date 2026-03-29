@@ -30,10 +30,10 @@ namespace Murf
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupApiProjectResponse" /> class.
         /// </summary>
-        /// <param name="next"></param>
         /// <param name="projects">
         /// List of Projects
         /// </param>
+        /// <param name="next"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -41,8 +41,8 @@ namespace Murf
             global::System.Collections.Generic.IList<global::Murf.ApiProjectResponse> projects,
             string? next)
         {
-            this.Projects = projects ?? throw new global::System.ArgumentNullException(nameof(projects));
             this.Next = next;
+            this.Projects = projects ?? throw new global::System.ArgumentNullException(nameof(projects));
         }
 
         /// <summary>

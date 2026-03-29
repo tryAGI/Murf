@@ -62,11 +62,11 @@ namespace Murf
         /// <param name="audioLengthInSeconds">
         /// Length of the generated audio in seconds.
         /// </param>
-        /// <param name="encodedAudio">
-        /// Base64 encoded string of the generated audio. Used when audio is returned directly in the response.
-        /// </param>
         /// <param name="remainingCharacterCount">
         /// Remaining number of characters available for synthesis in the current billing cycle.
+        /// </param>
+        /// <param name="encodedAudio">
+        /// Base64 encoded string of the generated audio. Used when audio is returned directly in the response.
         /// </param>
         /// <param name="transcription">
         /// Transcript of the generated audio, if transcription was requested.
@@ -87,8 +87,8 @@ namespace Murf
         {
             this.AudioFile = audioFile ?? throw new global::System.ArgumentNullException(nameof(audioFile));
             this.AudioLengthInSeconds = audioLengthInSeconds;
-            this.RemainingCharacterCount = remainingCharacterCount;
             this.EncodedAudio = encodedAudio;
+            this.RemainingCharacterCount = remainingCharacterCount;
             this.Transcription = transcription;
             this.Warning = warning;
         }

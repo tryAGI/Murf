@@ -106,6 +106,12 @@ namespace Murf
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateSpeechStreamingRequest" /> class.
         /// </summary>
+        /// <param name="text">
+        /// The text that is to be synthesised. e.g. 'Hello there [pause 1s] friend'
+        /// </param>
+        /// <param name="voiceId">
+        /// Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
+        /// </param>
         /// <param name="model">
         /// The model to use for audio output. Defaults to FALCON for all the regions except US-East. Valid values: FALCON, GEN2
         /// </param>
@@ -144,15 +150,9 @@ namespace Murf
         /// <param name="style">
         /// The voice style to be used for voiceover generation.
         /// </param>
-        /// <param name="text">
-        /// The text that is to be synthesised. e.g. 'Hello there [pause 1s] friend'
-        /// </param>
         /// <param name="variation">
         /// Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.<br/>
         /// Default Value: 1
-        /// </param>
-        /// <param name="voiceId">
-        /// Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -172,8 +172,6 @@ namespace Murf
             string? style,
             int? variation)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
             this.Model = model;
             this.ChannelType = channelType;
             this.Format = format;
@@ -184,7 +182,9 @@ namespace Murf
             this.Rate = rate;
             this.SampleRate = sampleRate;
             this.Style = style;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Variation = variation;
+            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
         }
 
         /// <summary>

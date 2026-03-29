@@ -143,6 +143,9 @@ namespace Murf
         /// <summary>
         /// Initializes a new instance of the <see cref="ConvertRequest" /> class.
         /// </summary>
+        /// <param name="voiceId">
+        /// Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
+        /// </param>
         /// <param name="audioDuration">
         /// This parameter allows specifying the duration (in seconds) for the generated audio. If the value is 0, this parameter will be ignored. Only available for Gen2 model.
         /// </param>
@@ -206,9 +209,6 @@ namespace Murf
         /// Higher values will add more variation in terms of Pause, Pitch, and Speed to the voice. Only available for Gen2 model.<br/>
         /// Default Value: 1
         /// </param>
-        /// <param name="voiceId">
-        /// Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -233,7 +233,6 @@ namespace Murf
             string? transcription,
             int? variation)
         {
-            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
             this.AudioDuration = audioDuration;
             this.ChannelType = channelType;
             this.EncodeOutputAsBase64 = encodeOutputAsBase64;
@@ -252,6 +251,7 @@ namespace Murf
             this.Style = style;
             this.Transcription = transcription;
             this.Variation = variation;
+            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
         }
 
         /// <summary>

@@ -78,25 +78,25 @@ namespace Murf
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiJobResponse" /> class.
         /// </summary>
-        /// <param name="fileUrl"></param>
         /// <param name="dubbingType">
         /// Dubbing Type
         /// </param>
-        /// <param name="webhookUrl"></param>
         /// <param name="fileName">
         /// Your Uploaded File Name
         /// </param>
         /// <param name="priority">
         /// Priority of the job. Allowed values: LOW, NORMAL, HIGH
         /// </param>
-        /// <param name="sourceLocale">
-        /// Source locale
-        /// </param>
         /// <param name="jobId">
         /// Your Job Id
         /// </param>
         /// <param name="targetLocales">
         /// List of target locales
+        /// </param>
+        /// <param name="fileUrl"></param>
+        /// <param name="webhookUrl"></param>
+        /// <param name="sourceLocale">
+        /// Source locale
         /// </param>
         /// <param name="warning"></param>
 #if NET7_0_OR_GREATER
@@ -113,14 +113,14 @@ namespace Murf
             string? sourceLocale,
             string? warning)
         {
+            this.FileUrl = fileUrl;
             this.DubbingType = dubbingType;
+            this.WebhookUrl = webhookUrl;
             this.FileName = fileName ?? throw new global::System.ArgumentNullException(nameof(fileName));
             this.Priority = priority;
+            this.SourceLocale = sourceLocale;
             this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
             this.TargetLocales = targetLocales ?? throw new global::System.ArgumentNullException(nameof(targetLocales));
-            this.FileUrl = fileUrl;
-            this.WebhookUrl = webhookUrl;
-            this.SourceLocale = sourceLocale;
             this.Warning = warning;
         }
 
