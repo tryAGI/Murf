@@ -351,6 +351,7 @@ namespace Murf
             global::System.Collections.Generic.IList<string> targetLocales,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Murf.ApiUpdateProjectRequest
             {
                 TargetLocales = targetLocales,
