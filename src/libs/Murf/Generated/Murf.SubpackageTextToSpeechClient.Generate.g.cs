@@ -454,6 +454,7 @@ namespace Murf
             bool? wordDurationsAsOriginalText = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Murf.GenerateSpeechRequest
             {
                 AudioDuration = audioDuration,

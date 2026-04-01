@@ -472,6 +472,7 @@ namespace Murf
             int? variation = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Murf.GenerateSpeechStreamingRequest
             {
                 Model = model,

@@ -385,6 +385,7 @@ namespace Murf
             global::System.Collections.Generic.IList<string> texts,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Murf.MurfApiTranslationRequest
             {
                 TargetLanguage = targetLanguage,
