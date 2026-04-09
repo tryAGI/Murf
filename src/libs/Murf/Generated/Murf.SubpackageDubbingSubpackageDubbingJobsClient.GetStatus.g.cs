@@ -5,6 +5,25 @@ namespace Murf
 {
     public partial class SubpackageDubbingSubpackageDubbingJobsClient
     {
+
+
+        private static readonly global::Murf.EndPointSecurityRequirement s_GetStatusSecurityRequirement0 =
+            new global::Murf.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Murf.EndPointAuthorizationRequirement[]
+                {                    new global::Murf.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Murf.EndPointSecurityRequirement[] s_GetStatusSecurityRequirements =
+            new global::Murf.EndPointSecurityRequirement[]
+            {                s_GetStatusSecurityRequirement0,
+            };
         partial void PrepareGetStatusArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string jobId);
@@ -37,9 +56,15 @@ namespace Murf
                 httpClient: HttpClient,
                 jobId: ref jobId);
 
+
+            var __authorizations = global::Murf.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetStatusSecurityRequirements,
+                operationName: "GetStatusAsync");
+
             var __pathBuilder = new global::Murf.PathBuilder(
                 path: $"/v1/murfdub/jobs/{jobId}/status",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -49,7 +74,7 @@ namespace Murf
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

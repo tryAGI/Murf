@@ -5,6 +5,25 @@ namespace Murf
 {
     public partial class SubpackageTextToSpeechClient
     {
+
+
+        private static readonly global::Murf.EndPointSecurityRequirement s_GenerateSecurityRequirement0 =
+            new global::Murf.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Murf.EndPointAuthorizationRequirement[]
+                {                    new global::Murf.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Murf.EndPointSecurityRequirement[] s_GenerateSecurityRequirements =
+            new global::Murf.EndPointSecurityRequirement[]
+            {                s_GenerateSecurityRequirement0,
+            };
         partial void PrepareGenerateArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Murf.GenerateSpeechRequest request);
@@ -41,9 +60,15 @@ namespace Murf
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Murf.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GenerateSecurityRequirements,
+                operationName: "GenerateAsync");
+
             var __pathBuilder = new global::Murf.PathBuilder(
                 path: "/v1/speech/generate",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace Murf
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

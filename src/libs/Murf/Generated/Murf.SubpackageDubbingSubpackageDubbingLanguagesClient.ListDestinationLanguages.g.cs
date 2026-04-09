@@ -5,6 +5,25 @@ namespace Murf
 {
     public partial class SubpackageDubbingSubpackageDubbingLanguagesClient
     {
+
+
+        private static readonly global::Murf.EndPointSecurityRequirement s_ListDestinationLanguagesSecurityRequirement0 =
+            new global::Murf.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Murf.EndPointAuthorizationRequirement[]
+                {                    new global::Murf.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Murf.EndPointSecurityRequirement[] s_ListDestinationLanguagesSecurityRequirements =
+            new global::Murf.EndPointSecurityRequirement[]
+            {                s_ListDestinationLanguagesSecurityRequirement0,
+            };
         partial void PrepareListDestinationLanguagesArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareListDestinationLanguagesRequest(
@@ -32,9 +51,15 @@ namespace Murf
             PrepareListDestinationLanguagesArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Murf.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListDestinationLanguagesSecurityRequirements,
+                operationName: "ListDestinationLanguagesAsync");
+
             var __pathBuilder = new global::Murf.PathBuilder(
                 path: "/v1/murfdub/list-destination-languages",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -44,7 +69,7 @@ namespace Murf
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

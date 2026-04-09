@@ -5,6 +5,25 @@ namespace Murf
 {
     public partial class SubpackageDubbingSubpackageDubbingProjectsClient
     {
+
+
+        private static readonly global::Murf.EndPointSecurityRequirement s_ListSecurityRequirement0 =
+            new global::Murf.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Murf.EndPointAuthorizationRequirement[]
+                {                    new global::Murf.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Murf.EndPointSecurityRequirement[] s_ListSecurityRequirements =
+            new global::Murf.EndPointSecurityRequirement[]
+            {                s_ListSecurityRequirement0,
+            };
         partial void PrepareListArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
@@ -42,13 +61,19 @@ namespace Murf
                 limit: ref limit,
                 next: ref next);
 
+
+            var __authorizations = global::Murf.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ListSecurityRequirements,
+                operationName: "ListAsync");
+
             var __pathBuilder = new global::Murf.PathBuilder(
                 path: "/v1/murfdub/projects/list",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("next", next) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -58,7 +83,7 @@ namespace Murf
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

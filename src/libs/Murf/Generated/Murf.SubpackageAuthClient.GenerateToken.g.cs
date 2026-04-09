@@ -5,6 +5,25 @@ namespace Murf
 {
     public partial class SubpackageAuthClient
     {
+
+
+        private static readonly global::Murf.EndPointSecurityRequirement s_GenerateTokenSecurityRequirement0 =
+            new global::Murf.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Murf.EndPointAuthorizationRequirement[]
+                {                    new global::Murf.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Murf.EndPointSecurityRequirement[] s_GenerateTokenSecurityRequirements =
+            new global::Murf.EndPointSecurityRequirement[]
+            {                s_GenerateTokenSecurityRequirement0,
+            };
         partial void PrepareGenerateTokenArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGenerateTokenRequest(
@@ -33,9 +52,15 @@ namespace Murf
             PrepareGenerateTokenArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Murf.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GenerateTokenSecurityRequirements,
+                operationName: "GenerateTokenAsync");
+
             var __pathBuilder = new global::Murf.PathBuilder(
                 path: "/v1/auth/token",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace Murf
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
