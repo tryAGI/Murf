@@ -6,6 +6,7 @@ namespace Murf
     public sealed partial class MurfClient
     {
         /// <inheritdoc cref="MurfClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Murf.EndPointAuthorization}?, bool)"/>
+
         public MurfClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

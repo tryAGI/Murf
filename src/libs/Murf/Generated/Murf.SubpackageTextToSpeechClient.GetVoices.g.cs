@@ -5,6 +5,25 @@ namespace Murf
 {
     public partial class SubpackageTextToSpeechClient
     {
+
+
+        private static readonly global::Murf.EndPointSecurityRequirement s_GetVoicesSecurityRequirement0 =
+            new global::Murf.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Murf.EndPointAuthorizationRequirement[]
+                {                    new global::Murf.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Murf.EndPointSecurityRequirement[] s_GetVoicesSecurityRequirements =
+            new global::Murf.EndPointSecurityRequirement[]
+            {                s_GetVoicesSecurityRequirement0,
+            };
         partial void PrepareGetVoicesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? model,
@@ -45,12 +64,18 @@ namespace Murf
                 model: ref model,
                 token: ref token);
 
+
+            var __authorizations = global::Murf.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetVoicesSecurityRequirements,
+                operationName: "GetVoicesAsync");
+
             var __pathBuilder = new global::Murf.PathBuilder(
                 path: "/v1/speech/voices",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("model", model) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -60,7 +85,7 @@ namespace Murf
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
