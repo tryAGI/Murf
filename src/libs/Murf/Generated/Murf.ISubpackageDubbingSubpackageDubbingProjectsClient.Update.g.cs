@@ -9,12 +9,14 @@ namespace Murf
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Murf.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Murf.ApiProjectResponse> UpdateAsync(
             string projectId,
 
             global::Murf.ApiUpdateProjectRequest request,
+            global::Murf.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update
@@ -23,11 +25,13 @@ namespace Murf
         /// <param name="targetLocales">
         /// List of target locales
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Murf.ApiProjectResponse> UpdateAsync(
             string projectId,
             global::System.Collections.Generic.IList<string> targetLocales,
+            global::Murf.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

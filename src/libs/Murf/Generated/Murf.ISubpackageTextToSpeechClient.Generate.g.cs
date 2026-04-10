@@ -9,11 +9,13 @@ namespace Murf
         /// Returns a url to the generated audio file along with other associated properties.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Murf.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Murf.GenerateSpeechResponse> GenerateAsync(
 
             global::Murf.GenerateSpeechRequest request,
+            global::Murf.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Synthesize Speech<br/>
@@ -78,6 +80,7 @@ namespace Murf
         /// If set to true, the word durations in response will return words as the original input text. (English only)<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Murf.GenerateSpeechResponse> GenerateAsync(
@@ -97,6 +100,7 @@ namespace Murf
             string? style = default,
             int? variation = default,
             bool? wordDurationsAsOriginalText = default,
+            global::Murf.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -26,6 +26,7 @@ namespace Murf
             Authorizations.Add(new global::Murf.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApikeyApiKey",
                 Location = "Header",
                 Name = "api-key",
                 Value = apiKey,
