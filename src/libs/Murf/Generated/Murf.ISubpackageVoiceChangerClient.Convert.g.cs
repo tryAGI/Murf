@@ -9,11 +9,13 @@ namespace Murf
         /// Returns a url to the generated audio file along with other associated properties.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Murf.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Murf.SpeechToSpeechResponse> ConvertAsync(
 
             global::Murf.ConvertRequest request,
+            global::Murf.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Voice Changer<br/>
@@ -85,6 +87,7 @@ namespace Murf
         /// <param name="voiceId">
         /// Use the GET /v1/speech/voices API to find supported voiceIds. You can use either the voiceId (e.g. en-US-natalie) or just the voice actor's name (e.g. natalie).
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Murf.SpeechToSpeechResponse> ConvertAsync(
@@ -107,6 +110,7 @@ namespace Murf
             string? style = default,
             string? transcription = default,
             int? variation = default,
+            global::Murf.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

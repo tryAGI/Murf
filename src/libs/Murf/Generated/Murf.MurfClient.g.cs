@@ -30,6 +30,9 @@ namespace Murf
 #if DEBUG
             = true;
 #endif
+
+        /// <inheritdoc/>
+        public global::Murf.AutoSDKClientOptions Options { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -39,7 +42,7 @@ namespace Murf
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAuthClient SubpackageAuth => new SubpackageAuthClient(HttpClient, authorizations: Authorizations)
+        public SubpackageAuthClient SubpackageAuth => new SubpackageAuthClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -48,7 +51,7 @@ namespace Murf
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDubbingSubpackageDubbingJobsClient SubpackageDubbingSubpackageDubbingJobs => new SubpackageDubbingSubpackageDubbingJobsClient(HttpClient, authorizations: Authorizations)
+        public SubpackageDubbingSubpackageDubbingJobsClient SubpackageDubbingSubpackageDubbingJobs => new SubpackageDubbingSubpackageDubbingJobsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -57,7 +60,7 @@ namespace Murf
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDubbingSubpackageDubbingLanguagesClient SubpackageDubbingSubpackageDubbingLanguages => new SubpackageDubbingSubpackageDubbingLanguagesClient(HttpClient, authorizations: Authorizations)
+        public SubpackageDubbingSubpackageDubbingLanguagesClient SubpackageDubbingSubpackageDubbingLanguages => new SubpackageDubbingSubpackageDubbingLanguagesClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -66,7 +69,7 @@ namespace Murf
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDubbingSubpackageDubbingProjectsClient SubpackageDubbingSubpackageDubbingProjects => new SubpackageDubbingSubpackageDubbingProjectsClient(HttpClient, authorizations: Authorizations)
+        public SubpackageDubbingSubpackageDubbingProjectsClient SubpackageDubbingSubpackageDubbingProjects => new SubpackageDubbingSubpackageDubbingProjectsClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -75,7 +78,7 @@ namespace Murf
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTextClient SubpackageText => new SubpackageTextClient(HttpClient, authorizations: Authorizations)
+        public SubpackageTextClient SubpackageText => new SubpackageTextClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -84,7 +87,7 @@ namespace Murf
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTextToSpeechClient SubpackageTextToSpeech => new SubpackageTextToSpeechClient(HttpClient, authorizations: Authorizations)
+        public SubpackageTextToSpeechClient SubpackageTextToSpeech => new SubpackageTextToSpeechClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -93,7 +96,7 @@ namespace Murf
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVoiceChangerClient SubpackageVoiceChanger => new SubpackageVoiceChangerClient(HttpClient, authorizations: Authorizations)
+        public SubpackageVoiceChangerClient SubpackageVoiceChanger => new SubpackageVoiceChangerClient(HttpClient, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -112,11 +115,37 @@ namespace Murf
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::Murf.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri,
+                authorizations,
+                options: null,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance of the MurfClient.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public MurfClient(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::Murf.EndPointAuthorization>? authorizations = null,
+            global::Murf.AutoSDKClientOptions? options = null,
             bool disposeHttpClient = true)
         {
+
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::Murf.EndPointAuthorization>();
+            Options = options ?? new global::Murf.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
             Initialized(HttpClient);
