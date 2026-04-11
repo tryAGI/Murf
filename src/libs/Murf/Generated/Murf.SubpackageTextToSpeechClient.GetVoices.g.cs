@@ -125,10 +125,10 @@ namespace Murf
                 } 
             }
 
-                if (token != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("token", token.ToString());
-                }
+            if (token != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("token", token.ToString());
+            }
 
                 global::Murf.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
