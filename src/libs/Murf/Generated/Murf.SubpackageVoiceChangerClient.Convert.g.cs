@@ -122,27 +122,55 @@ namespace Murf
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AudioDuration}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.AudioDuration, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"audio_duration\"");
                             } 
                             if (request.ChannelType != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ChannelType}"),
+                                    content: new global::System.Net.Http.StringContent(request.ChannelType ?? string.Empty),
                                     name: "\"channel_type\"");
                             } 
                             if (request.EncodeOutputAsBase64 != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.EncodeOutputAsBase64}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EncodeOutputAsBase64, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"encode_output_as_base64\"");
                             } 
                             if (request.File != default)
                             {
 
                                 var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                                __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Filename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentFile,
                                     name: "\"file\"",
@@ -156,95 +184,95 @@ namespace Murf
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FileUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.FileUrl ?? string.Empty),
                                     name: "\"file_url\"");
                             } 
                             if (request.Format != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Format}"),
+                                    content: new global::System.Net.Http.StringContent(request.Format ?? string.Empty),
                                     name: "\"format\"");
                             } 
                             if (request.MultiNativeLocale != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MultiNativeLocale}"),
+                                    content: new global::System.Net.Http.StringContent(request.MultiNativeLocale ?? string.Empty),
                                     name: "\"multi_native_locale\"");
                             } 
                             if (request.Pitch != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Pitch}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Pitch, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"pitch\"");
                             } 
                             if (request.PronunciationDictionary != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.PronunciationDictionary}"),
+                                    content: new global::System.Net.Http.StringContent(request.PronunciationDictionary ?? string.Empty),
                                     name: "\"pronunciation_dictionary\"");
                             } 
                             if (request.Rate != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Rate}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Rate, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"rate\"");
                             } 
                             if (request.RetainAccent != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.RetainAccent}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.RetainAccent, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"retain_accent\"");
                             } 
                             if (request.RetainProsody != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.RetainProsody}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.RetainProsody, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"retain_prosody\"");
                             } 
                             if (request.ReturnTranscription != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ReturnTranscription}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.ReturnTranscription, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"return_transcription\"");
                             } 
                             if (request.SampleRate != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SampleRate}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.SampleRate, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"sample_rate\"");
                             } 
                             if (request.Style != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Style}"),
+                                    content: new global::System.Net.Http.StringContent(request.Style ?? string.Empty),
                                     name: "\"style\"");
                             } 
                             if (request.Transcription != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Transcription}"),
+                                    content: new global::System.Net.Http.StringContent(request.Transcription ?? string.Empty),
                                     name: "\"transcription\"");
                             } 
                             if (request.Variation != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Variation}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Variation, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"variation\"");
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.VoiceId}"),
+                                content: new global::System.Net.Http.StringContent(request.VoiceId ?? string.Empty),
                                 name: "\"voice_id\"");
                             __httpRequest.Content = __httpRequestContent;
                 global::Murf.AutoSDKRequestOptionsSupport.ApplyHeaders(
