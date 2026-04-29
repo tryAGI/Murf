@@ -121,6 +121,34 @@ namespace Murf
                             {
 
                                 var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                                __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.FileName is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.FileName) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentFile,
                                     name: "\"file\"",
@@ -134,14 +162,14 @@ namespace Murf
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FileUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.FileUrl ?? string.Empty),
                                     name: "\"file_url\"");
                             } 
                             if (request.SourceLocale != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SourceLocale}"),
+                                    content: new global::System.Net.Http.StringContent(request.SourceLocale ?? string.Empty),
                                     name: "\"source_locale\"");
                             }
                             __httpRequestContent.Add(
@@ -151,28 +179,28 @@ namespace Murf
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.WebhookUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.WebhookUrl ?? string.Empty),
                                     name: "\"webhook_url\"");
                             } 
                             if (request.FileName != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FileName}"),
+                                    content: new global::System.Net.Http.StringContent(request.FileName ?? string.Empty),
                                     name: "\"file_name\"");
                             } 
                             if (request.Priority != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Priority?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Priority).HasValue ? (request.Priority).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"priority\"");
                             } 
                             if (request.WebhookSecret != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.WebhookSecret}"),
+                                    content: new global::System.Net.Http.StringContent(request.WebhookSecret ?? string.Empty),
                                     name: "\"webhook_secret\"");
                             }
                             __httpRequest.Content = __httpRequestContent;
