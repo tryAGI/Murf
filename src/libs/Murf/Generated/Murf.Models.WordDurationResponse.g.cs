@@ -90,5 +90,6 @@ namespace Murf
         public WordDurationResponse()
         {
         }
+
     }
 }

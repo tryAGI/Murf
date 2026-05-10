@@ -110,5 +110,6 @@ namespace Murf
         public DubJobStatusResponse()
         {
         }
+
     }
 }

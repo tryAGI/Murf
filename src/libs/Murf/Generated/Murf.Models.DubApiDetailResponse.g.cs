@@ -75,5 +75,6 @@ namespace Murf
         public DubApiDetailResponse()
         {
         }
+
     }
 }

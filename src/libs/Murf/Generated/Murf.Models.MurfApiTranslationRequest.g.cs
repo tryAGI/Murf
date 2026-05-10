@@ -54,5 +54,6 @@ namespace Murf
         public MurfApiTranslationRequest()
         {
         }
+
     }
 }
