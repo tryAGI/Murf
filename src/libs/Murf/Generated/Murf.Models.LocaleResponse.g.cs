@@ -62,5 +62,6 @@ namespace Murf
         public LocaleResponse()
         {
         }
+
     }
 }
