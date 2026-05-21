@@ -55,6 +55,29 @@ namespace Murf
             global::Murf.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ConvertAsResponseAsync(
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Voice Changer<br/>
+        /// Returns a url to the generated audio file along with other associated properties.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Murf.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Murf.AutoSDKHttpResponse<global::Murf.SpeechToSpeechResponse>> ConvertAsResponseAsync(
+
+            global::Murf.ConvertRequest request,
+            global::Murf.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -81,10 +104,11 @@ namespace Murf
             var __maxAttempts = global::Murf.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Murf.PathBuilder(
                                 path: "/v1/voice-changer/convert",
                                 baseUri: HttpClient.BaseAddress);
@@ -117,6 +141,7 @@ namespace Murf
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             if (request.AudioDuration != default)
                             {
@@ -124,21 +149,24 @@ namespace Murf
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.AudioDuration, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"audio_duration\"");
-                            } 
+
+                            }
                             if (request.ChannelType != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.ChannelType ?? string.Empty),
                                     name: "\"channel_type\"");
-                            } 
+
+                            }
                             if (request.EncodeOutputAsBase64 != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.EncodeOutputAsBase64, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"encode_output_as_base64\"");
-                            } 
+
+                            }
                             if (request.File != default)
                             {
 
@@ -179,102 +207,118 @@ namespace Murf
                                 {
                                     __contentFile.Headers.ContentDisposition.FileNameStar = null;
                                 }
-                            } 
+
+                            }
                             if (request.FileUrl != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.FileUrl ?? string.Empty),
                                     name: "\"file_url\"");
-                            } 
+
+                            }
                             if (request.Format != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.Format ?? string.Empty),
                                     name: "\"format\"");
-                            } 
+
+                            }
                             if (request.MultiNativeLocale != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.MultiNativeLocale ?? string.Empty),
                                     name: "\"multi_native_locale\"");
-                            } 
+
+                            }
                             if (request.Pitch != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Pitch, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"pitch\"");
-                            } 
+
+                            }
                             if (request.PronunciationDictionary != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.PronunciationDictionary ?? string.Empty),
                                     name: "\"pronunciation_dictionary\"");
-                            } 
+
+                            }
                             if (request.Rate != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Rate, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"rate\"");
-                            } 
+
+                            }
                             if (request.RetainAccent != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.RetainAccent, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"retain_accent\"");
-                            } 
+
+                            }
                             if (request.RetainProsody != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.RetainProsody, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"retain_prosody\"");
-                            } 
+
+                            }
                             if (request.ReturnTranscription != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.ReturnTranscription, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"return_transcription\"");
-                            } 
+
+                            }
                             if (request.SampleRate != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.SampleRate, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"sample_rate\"");
-                            } 
+
+                            }
                             if (request.Style != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.Style ?? string.Empty),
                                     name: "\"style\"");
-                            } 
+
+                            }
                             if (request.Transcription != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.Transcription ?? string.Empty),
                                     name: "\"transcription\"");
-                            } 
+
+                            }
                             if (request.Variation != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Variation, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"variation\"");
+
                             }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.VoiceId ?? string.Empty),
                                 name: "\"voice_id\"");
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::Murf.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -316,6 +360,8 @@ namespace Murf
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -326,6 +372,11 @@ namespace Murf
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Murf.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Murf.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -343,6 +394,8 @@ namespace Murf
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -352,8 +405,7 @@ namespace Murf
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Murf.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -362,6 +414,11 @@ namespace Murf
                         __attempt < __maxAttempts &&
                         global::Murf.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Murf.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Murf.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Murf.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -378,14 +435,15 @@ namespace Murf
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Murf.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -425,6 +483,8 @@ namespace Murf
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -445,6 +505,8 @@ namespace Murf
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Bad Request
@@ -659,9 +721,13 @@ namespace Murf
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Murf.SpeechToSpeechResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Murf.SpeechToSpeechResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Murf.AutoSDKHttpResponse<global::Murf.SpeechToSpeechResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Murf.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -689,9 +755,13 @@ namespace Murf
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Murf.SpeechToSpeechResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Murf.SpeechToSpeechResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Murf.AutoSDKHttpResponse<global::Murf.SpeechToSpeechResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Murf.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

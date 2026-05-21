@@ -19,6 +19,18 @@ namespace Murf
         /// <summary>
         /// Create With Project Id
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Murf.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Murf.AutoSDKHttpResponse<global::Murf.ApiJobResponse>> CreateDubbingJobWithProjectIdAsResponseAsync(
+
+            global::Murf.CreateDubbingJobWithProjectIdRequest request,
+            global::Murf.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create With Project Id
+        /// </summary>
         /// <param name="file">
         /// The file to upload
         /// </param>

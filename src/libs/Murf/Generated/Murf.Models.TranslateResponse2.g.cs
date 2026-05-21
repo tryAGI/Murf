@@ -48,5 +48,6 @@ namespace Murf
         public TranslateResponse2()
         {
         }
+
     }
 }

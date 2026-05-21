@@ -130,5 +130,6 @@ namespace Murf
         public ApiJobResponse()
         {
         }
+
     }
 }
