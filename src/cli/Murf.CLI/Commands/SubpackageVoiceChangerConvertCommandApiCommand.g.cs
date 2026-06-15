@@ -205,24 +205,24 @@ Returns a url to the generated audio file along with other associated properties
                             RequestFile,
                             global::Murf.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var audioDuration = CliRuntime.WasSpecified(parseResult, AudioDuration) ? parseResult.GetValue(AudioDuration) : __requestBase is not null ? __requestBase.AudioDuration : default;
-                        var channelType = CliRuntime.WasSpecified(parseResult, ChannelType) ? parseResult.GetValue(ChannelType) : __requestBase is not null ? __requestBase.ChannelType : default;
-                        var encodeOutputAsBase64 = CliRuntime.WasSpecified(parseResult, EncodeOutputAsBase64) ? parseResult.GetValue(EncodeOutputAsBase64) : __requestBase is not null ? __requestBase.EncodeOutputAsBase64 : default;
-                        var file = CliRuntime.WasSpecified(parseResult, File) ? parseResult.GetValue(File) : __requestBase is not null ? __requestBase.File : default;
-                        var filename = CliRuntime.WasSpecified(parseResult, Filename) ? parseResult.GetValue(Filename) : __requestBase is not null ? __requestBase.Filename : default;
-                        var fileUrl = CliRuntime.WasSpecified(parseResult, FileUrl) ? parseResult.GetValue(FileUrl) : __requestBase is not null ? __requestBase.FileUrl : default;
-                        var format = CliRuntime.WasSpecified(parseResult, Format) ? parseResult.GetValue(Format) : __requestBase is not null ? __requestBase.Format : default;
-                        var multiNativeLocale = CliRuntime.WasSpecified(parseResult, MultiNativeLocale) ? parseResult.GetValue(MultiNativeLocale) : __requestBase is not null ? __requestBase.MultiNativeLocale : default;
-                        var pitch = CliRuntime.WasSpecified(parseResult, Pitch) ? parseResult.GetValue(Pitch) : __requestBase is not null ? __requestBase.Pitch : default;
-                        var pronunciationDictionary = CliRuntime.WasSpecified(parseResult, PronunciationDictionary) ? parseResult.GetValue(PronunciationDictionary) : __requestBase is not null ? __requestBase.PronunciationDictionary : default;
-                        var rate = CliRuntime.WasSpecified(parseResult, Rate) ? parseResult.GetValue(Rate) : __requestBase is not null ? __requestBase.Rate : default;
-                        var retainAccent = CliRuntime.WasSpecified(parseResult, RetainAccent) ? parseResult.GetValue(RetainAccent) : __requestBase is not null ? __requestBase.RetainAccent : default;
-                        var retainProsody = CliRuntime.WasSpecified(parseResult, RetainProsody) ? parseResult.GetValue(RetainProsody) : __requestBase is not null ? __requestBase.RetainProsody : default;
-                        var returnTranscription = CliRuntime.WasSpecified(parseResult, ReturnTranscription) ? parseResult.GetValue(ReturnTranscription) : __requestBase is not null ? __requestBase.ReturnTranscription : default;
-                        var sampleRate = CliRuntime.WasSpecified(parseResult, SampleRate) ? parseResult.GetValue(SampleRate) : __requestBase is not null ? __requestBase.SampleRate : default;
-                        var style = CliRuntime.WasSpecified(parseResult, Style) ? parseResult.GetValue(Style) : __requestBase is not null ? __requestBase.Style : default;
-                        var transcription = CliRuntime.WasSpecified(parseResult, Transcription) ? parseResult.GetValue(Transcription) : __requestBase is not null ? __requestBase.Transcription : default;
-                        var variation = CliRuntime.WasSpecified(parseResult, Variation) ? parseResult.GetValue(Variation) : __requestBase is not null ? __requestBase.Variation : default;
+                        var audioDuration = CliRuntime.WasSpecified(parseResult, AudioDuration) ? parseResult.GetValue(AudioDuration) : (__requestBase is { } __AudioDurationBaseValue ? __AudioDurationBaseValue.AudioDuration : default);
+                        var channelType = CliRuntime.WasSpecified(parseResult, ChannelType) ? parseResult.GetValue(ChannelType) : (__requestBase is { } __ChannelTypeBaseValue ? __ChannelTypeBaseValue.ChannelType : default);
+                        var encodeOutputAsBase64 = CliRuntime.WasSpecified(parseResult, EncodeOutputAsBase64) ? parseResult.GetValue(EncodeOutputAsBase64) : (__requestBase is { } __EncodeOutputAsBase64BaseValue ? __EncodeOutputAsBase64BaseValue.EncodeOutputAsBase64 : default);
+                        var file = CliRuntime.WasSpecified(parseResult, File) ? parseResult.GetValue(File) : (__requestBase is { } __FileBaseValue ? __FileBaseValue.File : default);
+                        var filename = CliRuntime.WasSpecified(parseResult, Filename) ? parseResult.GetValue(Filename) : (__requestBase is { } __FilenameBaseValue ? __FilenameBaseValue.Filename : default);
+                        var fileUrl = CliRuntime.WasSpecified(parseResult, FileUrl) ? parseResult.GetValue(FileUrl) : (__requestBase is { } __FileUrlBaseValue ? __FileUrlBaseValue.FileUrl : default);
+                        var format = CliRuntime.WasSpecified(parseResult, Format) ? parseResult.GetValue(Format) : (__requestBase is { } __FormatBaseValue ? __FormatBaseValue.Format : default);
+                        var multiNativeLocale = CliRuntime.WasSpecified(parseResult, MultiNativeLocale) ? parseResult.GetValue(MultiNativeLocale) : (__requestBase is { } __MultiNativeLocaleBaseValue ? __MultiNativeLocaleBaseValue.MultiNativeLocale : default);
+                        var pitch = CliRuntime.WasSpecified(parseResult, Pitch) ? parseResult.GetValue(Pitch) : (__requestBase is { } __PitchBaseValue ? __PitchBaseValue.Pitch : default);
+                        var pronunciationDictionary = CliRuntime.WasSpecified(parseResult, PronunciationDictionary) ? parseResult.GetValue(PronunciationDictionary) : (__requestBase is { } __PronunciationDictionaryBaseValue ? __PronunciationDictionaryBaseValue.PronunciationDictionary : default);
+                        var rate = CliRuntime.WasSpecified(parseResult, Rate) ? parseResult.GetValue(Rate) : (__requestBase is { } __RateBaseValue ? __RateBaseValue.Rate : default);
+                        var retainAccent = CliRuntime.WasSpecified(parseResult, RetainAccent) ? parseResult.GetValue(RetainAccent) : (__requestBase is { } __RetainAccentBaseValue ? __RetainAccentBaseValue.RetainAccent : default);
+                        var retainProsody = CliRuntime.WasSpecified(parseResult, RetainProsody) ? parseResult.GetValue(RetainProsody) : (__requestBase is { } __RetainProsodyBaseValue ? __RetainProsodyBaseValue.RetainProsody : default);
+                        var returnTranscription = CliRuntime.WasSpecified(parseResult, ReturnTranscription) ? parseResult.GetValue(ReturnTranscription) : (__requestBase is { } __ReturnTranscriptionBaseValue ? __ReturnTranscriptionBaseValue.ReturnTranscription : default);
+                        var sampleRate = CliRuntime.WasSpecified(parseResult, SampleRate) ? parseResult.GetValue(SampleRate) : (__requestBase is { } __SampleRateBaseValue ? __SampleRateBaseValue.SampleRate : default);
+                        var style = CliRuntime.WasSpecified(parseResult, Style) ? parseResult.GetValue(Style) : (__requestBase is { } __StyleBaseValue ? __StyleBaseValue.Style : default);
+                        var transcription = CliRuntime.WasSpecified(parseResult, Transcription) ? parseResult.GetValue(Transcription) : (__requestBase is { } __TranscriptionBaseValue ? __TranscriptionBaseValue.Transcription : default);
+                        var variation = CliRuntime.WasSpecified(parseResult, Variation) ? parseResult.GetValue(Variation) : (__requestBase is { } __VariationBaseValue ? __VariationBaseValue.Variation : default);
                         var voiceId = parseResult.GetRequiredValue(VoiceId);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 

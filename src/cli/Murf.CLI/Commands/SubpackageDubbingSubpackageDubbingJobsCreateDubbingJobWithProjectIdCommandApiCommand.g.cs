@@ -121,13 +121,13 @@ internal static partial class SubpackageDubbingSubpackageDubbingJobsCreateDubbin
                             RequestFile,
                             global::Murf.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var file = CliRuntime.WasSpecified(parseResult, File) ? parseResult.GetValue(File) : __requestBase is not null ? __requestBase.File : default;
-                        var fileUrl = CliRuntime.WasSpecified(parseResult, FileUrl) ? parseResult.GetValue(FileUrl) : __requestBase is not null ? __requestBase.FileUrl : default;
+                        var file = CliRuntime.WasSpecified(parseResult, File) ? parseResult.GetValue(File) : (__requestBase is { } __FileBaseValue ? __FileBaseValue.File : default);
+                        var fileUrl = CliRuntime.WasSpecified(parseResult, FileUrl) ? parseResult.GetValue(FileUrl) : (__requestBase is { } __FileUrlBaseValue ? __FileUrlBaseValue.FileUrl : default);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
-                        var webhookUrl = CliRuntime.WasSpecified(parseResult, WebhookUrl) ? parseResult.GetValue(WebhookUrl) : __requestBase is not null ? __requestBase.WebhookUrl : default;
-                        var fileName = CliRuntime.WasSpecified(parseResult, FileName) ? parseResult.GetValue(FileName) : __requestBase is not null ? __requestBase.FileName : default;
-                        var priority = CliRuntime.WasSpecified(parseResult, Priority) ? parseResult.GetValue(Priority) : __requestBase is not null ? __requestBase.Priority : default;
-                        var webhookSecret = CliRuntime.WasSpecified(parseResult, WebhookSecret) ? parseResult.GetValue(WebhookSecret) : __requestBase is not null ? __requestBase.WebhookSecret : default;
+                        var webhookUrl = CliRuntime.WasSpecified(parseResult, WebhookUrl) ? parseResult.GetValue(WebhookUrl) : (__requestBase is { } __WebhookUrlBaseValue ? __WebhookUrlBaseValue.WebhookUrl : default);
+                        var fileName = CliRuntime.WasSpecified(parseResult, FileName) ? parseResult.GetValue(FileName) : (__requestBase is { } __FileNameBaseValue ? __FileNameBaseValue.FileName : default);
+                        var priority = CliRuntime.WasSpecified(parseResult, Priority) ? parseResult.GetValue(Priority) : (__requestBase is { } __PriorityBaseValue ? __PriorityBaseValue.Priority : default);
+                        var webhookSecret = CliRuntime.WasSpecified(parseResult, WebhookSecret) ? parseResult.GetValue(WebhookSecret) : (__requestBase is { } __WebhookSecretBaseValue ? __WebhookSecretBaseValue.WebhookSecret : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
