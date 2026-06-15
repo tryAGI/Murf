@@ -19,6 +19,16 @@ C# SDK for the [Murf AI](https://murf.ai/) API -- enterprise-grade text-to-speec
 using Murf;
 
 using var client = new MurfClient(apiKey);
+```
+
+### CLI
+
+```bash
+dotnet tool install --global Murf.CLI --prerelease
+murf api --help
+```
+
+```csharp
 
 // Generate speech from text
 var response = await client.SubpackageTextToSpeech.GenerateAsync(
