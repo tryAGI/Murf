@@ -109,9 +109,9 @@ internal static partial class SubpackageDubbingSubpackageDubbingProjectsCreateDu
                             global::Murf.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var name = parseResult.GetRequiredValue(NameOption);
-                        var sourceLocale = CliRuntime.WasSpecified(parseResult, SourceLocale) ? parseResult.GetValue(SourceLocale) : __requestBase is not null ? __requestBase.SourceLocale : default;
+                        var sourceLocale = CliRuntime.WasSpecified(parseResult, SourceLocale) ? parseResult.GetValue(SourceLocale) : (__requestBase is { } __SourceLocaleBaseValue ? __SourceLocaleBaseValue.SourceLocale : default);
                         var dubbingType = parseResult.GetRequiredValue(DubbingType);
-                        var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : __requestBase is not null ? __requestBase.Description : default;
+                        var description = CliRuntime.WasSpecified(parseResult, DescriptionOption) ? parseResult.GetValue(DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
                         var targetLocales = parseResult.GetRequiredValue(TargetLocales);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
