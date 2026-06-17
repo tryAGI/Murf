@@ -24,14 +24,12 @@ internal static class CliRuntime
             ? new global::System.Collections.Generic.List<global::Murf.EndPointAuthorization>()
             : new global::System.Collections.Generic.List<global::Murf.EndPointAuthorization>
             {
-        new global::Murf.EndPointAuthorization
-        {
-            Type = "ApiKey",
-            SchemeId = "ApikeyApiKey",
-            Location = "Header",
-            Name = "api-key",
-            Value = apiKey,
-        },
+        CreateAuthorization(
+            type: "ApiKey",
+            schemeId: "ApikeyApiKey",
+            location: "Header",
+            name: "api-key",
+            value: apiKey),
             };
         var baseUri = ResolveBaseUri(parseResult);
 
@@ -40,6 +38,30 @@ internal static class CliRuntime
             baseUri: baseUri,
             authorizations: authorizations,
             disposeHttpClient: true);
+    }
+
+    private static global::Murf.EndPointAuthorization CreateAuthorization(
+        string type,
+        string schemeId,
+        string location,
+        string name,
+        string value)
+    {
+        var authorization = new global::Murf.EndPointAuthorization
+        {
+            Type = type,
+            Location = location,
+            Name = name,
+            Value = value,
+        };
+
+        var schemeIdProperty = typeof(global::Murf.EndPointAuthorization).GetProperty("SchemeId");
+        if (schemeIdProperty?.CanWrite == true)
+        {
+            schemeIdProperty.SetValue(authorization, schemeId);
+        }
+
+        return authorization;
     }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage(
