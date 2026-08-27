@@ -4,20 +4,20 @@
 namespace Murf
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ApiVoiceGender
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Female,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Male,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NonBinary,
     }

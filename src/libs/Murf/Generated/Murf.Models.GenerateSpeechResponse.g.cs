@@ -4,19 +4,19 @@
 namespace Murf
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GenerateSpeechResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audioFile")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AudioFile { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audioLengthInSeconds")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -29,7 +29,7 @@ namespace Murf
         public long? ConsumedCharacterCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encodedAudio")]
         public string? EncodedAudio { get; set; }
@@ -42,13 +42,13 @@ namespace Murf
         public required long RemainingCharacterCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warning")]
         public string? Warning { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wordDurations")]
         [global::System.Text.Json.Serialization.JsonRequired]

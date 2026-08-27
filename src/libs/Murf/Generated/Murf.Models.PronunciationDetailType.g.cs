@@ -4,16 +4,16 @@
 namespace Murf
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PronunciationDetailType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ipa,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SayAs,
     }

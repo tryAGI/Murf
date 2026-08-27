@@ -9,11 +9,11 @@ namespace Murf
     public enum LocaleResponseSupportsItems
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Automated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qa,
     }

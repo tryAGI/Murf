@@ -20,7 +20,7 @@ namespace Murf.JsonConverters
                     {
                         return global::Murf.ApiJobResponseDubbingTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

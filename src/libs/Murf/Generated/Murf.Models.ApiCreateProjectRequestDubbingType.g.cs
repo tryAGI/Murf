@@ -4,16 +4,16 @@
 namespace Murf
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ApiCreateProjectRequestDubbingType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Automated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qa,
     }

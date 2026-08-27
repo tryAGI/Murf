@@ -9,11 +9,11 @@ namespace Murf
     public enum ApiJobResponseDubbingType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Automated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Qa,
     }

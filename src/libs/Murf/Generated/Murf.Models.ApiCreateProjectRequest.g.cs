@@ -4,7 +4,7 @@
 namespace Murf
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ApiCreateProjectRequest
     {
@@ -22,7 +22,7 @@ namespace Murf
         public string? SourceLocale { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dubbing_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Murf.JsonConverters.ApiCreateProjectRequestDubbingTypeJsonConverter))]
@@ -30,7 +30,7 @@ namespace Murf
         public required global::Murf.ApiCreateProjectRequestDubbingType DubbingType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
