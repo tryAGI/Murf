@@ -4,7 +4,7 @@
 namespace Murf
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConvertRequest
     {
@@ -40,7 +40,7 @@ namespace Murf
         public string? Filename { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_url")]
         public string? FileUrl { get; set; }

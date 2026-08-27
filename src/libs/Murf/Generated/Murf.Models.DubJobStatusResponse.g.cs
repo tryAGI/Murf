@@ -4,7 +4,7 @@
 namespace Murf
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DubJobStatusResponse
     {
@@ -29,31 +29,31 @@ namespace Murf
         public required string Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("download_details")]
         public global::System.Collections.Generic.IList<global::Murf.DubApiDetailResponse>? DownloadDetails { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits_used")]
         public long? CreditsUsed { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credits_remaining")]
         public long? CreditsRemaining { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failure_reason")]
         public string? FailureReason { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("failure_code")]
         public string? FailureCode { get; set; }

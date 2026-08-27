@@ -4,18 +4,18 @@
 namespace Murf
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListDestinationLanguagesResponse2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_message")]
         public string? ErrorMessage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_code")]
         public int? ErrorCode { get; set; }

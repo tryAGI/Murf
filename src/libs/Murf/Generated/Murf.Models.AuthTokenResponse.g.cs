@@ -4,7 +4,7 @@
 namespace Murf
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AuthTokenResponse
     {
@@ -15,7 +15,7 @@ namespace Murf
         public long? ExpiryInEpochMillis { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         public string? Token { get; set; }

@@ -10,7 +10,7 @@ namespace Murf
     public sealed partial class MurfClient : global::Murf.IMurfClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.murf.ai/";
 
@@ -37,7 +37,7 @@ namespace Murf
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Murf.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -47,7 +47,7 @@ namespace Murf
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageAuthClient SubpackageAuth => new SubpackageAuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -56,7 +56,7 @@ namespace Murf
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageDubbingSubpackageDubbingJobsClient SubpackageDubbingSubpackageDubbingJobs => new SubpackageDubbingSubpackageDubbingJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -65,7 +65,7 @@ namespace Murf
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageDubbingSubpackageDubbingLanguagesClient SubpackageDubbingSubpackageDubbingLanguages => new SubpackageDubbingSubpackageDubbingLanguagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -74,7 +74,7 @@ namespace Murf
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageDubbingSubpackageDubbingProjectsClient SubpackageDubbingSubpackageDubbingProjects => new SubpackageDubbingSubpackageDubbingProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -83,7 +83,7 @@ namespace Murf
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageTextClient SubpackageText => new SubpackageTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -92,7 +92,7 @@ namespace Murf
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageTextToSpeechClient SubpackageTextToSpeech => new SubpackageTextToSpeechClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -101,7 +101,7 @@ namespace Murf
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageVoiceChangerClient SubpackageVoiceChanger => new SubpackageVoiceChangerClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

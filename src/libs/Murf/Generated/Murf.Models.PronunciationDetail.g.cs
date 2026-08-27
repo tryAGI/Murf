@@ -11,13 +11,13 @@ namespace Murf
     public sealed partial class PronunciationDetail
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pronunciation")]
         public string? Pronunciation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Murf.JsonConverters.PronunciationDetailTypeJsonConverter))]

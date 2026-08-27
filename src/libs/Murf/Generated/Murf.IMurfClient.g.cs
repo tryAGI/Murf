@@ -39,43 +39,43 @@ namespace Murf
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageAuthClient SubpackageAuth { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageDubbingSubpackageDubbingJobsClient SubpackageDubbingSubpackageDubbingJobs { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageDubbingSubpackageDubbingLanguagesClient SubpackageDubbingSubpackageDubbingLanguages { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageDubbingSubpackageDubbingProjectsClient SubpackageDubbingSubpackageDubbingProjects { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageTextClient SubpackageText { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageTextToSpeechClient SubpackageTextToSpeech { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubpackageVoiceChangerClient SubpackageVoiceChanger { get; }
 
