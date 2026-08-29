@@ -56,6 +56,7 @@ namespace Murf
             typeof(global::Murf.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Murf.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Murf.PronunciationDetailType), TypeInfoPropertyName = "PronunciationDetailType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Murf.PronunciationDetail))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
