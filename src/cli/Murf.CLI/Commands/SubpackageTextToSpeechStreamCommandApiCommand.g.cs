@@ -111,26 +111,6 @@ Valid values: ""en-US"", ""en-UK"", ""es-ES"", etc. Use the GET /v1/speech/voice
           Hidden = true,
       };
 
-                    private static string FormatResponse(ParseResult parseResult, global::Murf.TextToSpeechStreamResponse200 value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
-                    {
-                        string? text = null;
-                        CustomizeResponseText(parseResult, value, ref text);
-                        if (!string.IsNullOrWhiteSpace(text))
-                        {
-                            return text;
-                        }
-
-                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
-                        {
-                        };
-                        CustomizeResponseFormatHints(hints);
-                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
-                    }
-
-                    static partial void CustomizeResponseText(ParseResult parseResult, global::Murf.TextToSpeechStreamResponse200 value, ref string? text);
-                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
-
-
     public static Command Create()
     {
         var command = new Command(@"stream", @"Stream Speech
@@ -223,13 +203,7 @@ Choose the `Base URL` from the URL dropdown (Global URL or a pinned Region)
                                     voiceId: voiceId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-
-                                await CliRuntime.WriteResponseAsync(
-                                    parseResult,
-                                    response,
-                                    global::Murf.SourceGenerationContext.Default,
-                                    FormatResponse,
-                                    cancellationToken).ConfigureAwait(false);
+                                await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

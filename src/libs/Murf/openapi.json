@@ -17,9 +17,10 @@
           "200": {
             "description": "Ok",
             "content": {
-              "application/json": {
+              "application/octet-stream": {
                 "schema": {
-                  "$ref": "#/components/schemas/text_to_speech_stream_Response_200"
+                  "type": "string",
+                  "format": "binary"
                 }
               }
             }

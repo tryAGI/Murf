@@ -28,7 +28,7 @@ namespace Murf
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Murf.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Murf.TextToSpeechStreamResponse200> StreamAsync(
+        global::System.Threading.Tasks.Task<byte[]> StreamAsync(
 
             global::Murf.GenerateSpeechStreamingRequest request,
             global::Murf.AutoSDKRequestOptions? requestOptions = default,
@@ -57,7 +57,36 @@ namespace Murf
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Murf.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Murf.AutoSDKHttpResponse<global::Murf.TextToSpeechStreamResponse200>> StreamAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamAsStreamAsync(
+
+            global::Murf.GenerateSpeechStreamingRequest request,
+            global::Murf.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Stream Speech<br/>
+        /// Synthesize speech with ultra-low latency over a streaming connection.<br/>
+        /// Choose the `Base URL` from the URL dropdown (Global URL or a pinned Region)<br/>
+        /// **Note**: Global URL auto-routes to the nearest region.<br/>
+        /// | Region         | URL                                       | Default Concurrency |<br/>
+        /// | ------------------------- | ---------------------------------------------- | -------------------- |<br/>
+        /// | Global (Routes to the nearest server) | `https://global.api.murf.ai/v1/speech/stream`     | Region specific concurrency |<br/>
+        /// | US-East                   | `https://us-east.api.murf.ai/v1/speech/stream`    | 15 |<br/>
+        /// | US-West                   | `https://us-west.api.murf.ai/v1/speech/stream`    | 2 |<br/>
+        /// | India                     | `https://in.api.murf.ai/v1/speech/stream`         | 2 |<br/>
+        /// | Canada                    | `https://ca.api.murf.ai/v1/speech/stream`         | 2 |<br/>
+        /// | South Korea               | `https://kr.api.murf.ai/v1/speech/stream`         | 2 |<br/>
+        /// | UAE                       | `https://me.api.murf.ai/v1/speech/stream`         | 2 |<br/>
+        /// | Japan                     | `https://jp.api.murf.ai/v1/speech/stream`         | 2 |<br/>
+        /// | Australia                 | `https://au.api.murf.ai/v1/speech/stream`         | 2 |<br/>
+        /// | EU (Central)              | `https://eu-central.api.murf.ai/v1/speech/stream` | 2 |<br/>
+        /// | UK                        | `https://uk.api.murf.ai/v1/speech/stream`         | 2 |<br/>
+        /// | South America (São Paulo) | `https://sa-east.api.murf.ai/v1/speech/stream`    | 2 |
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Murf.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Murf.AutoSDKHttpResponse<byte[]>> StreamAsResponseAsync(
 
             global::Murf.GenerateSpeechStreamingRequest request,
             global::Murf.AutoSDKRequestOptions? requestOptions = default,
@@ -133,7 +162,7 @@ namespace Murf
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Murf.TextToSpeechStreamResponse200> StreamAsync(
+        global::System.Threading.Tasks.Task<byte[]> StreamAsync(
             string text,
             string voiceId,
             string? model = default,
