@@ -111,6 +111,8 @@ Valid values: ""en-US"", ""en-UK"", ""es-ES"", etc. Use the GET /v1/speech/voice
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"stream", @"Stream Speech
@@ -205,6 +207,7 @@ Choose the `Base URL` from the URL dropdown (Global URL or a pinned Region)
 
                                 await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }
