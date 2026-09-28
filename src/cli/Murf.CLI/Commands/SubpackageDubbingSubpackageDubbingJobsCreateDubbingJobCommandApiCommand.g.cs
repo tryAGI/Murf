@@ -92,6 +92,8 @@ internal static partial class SubpackageDubbingSubpackageDubbingJobsCreateDubbin
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-dubbing-job", @"Create");
@@ -166,6 +168,7 @@ internal static partial class SubpackageDubbingSubpackageDubbingJobsCreateDubbin
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

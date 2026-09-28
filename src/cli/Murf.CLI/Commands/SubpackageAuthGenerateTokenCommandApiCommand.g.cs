@@ -29,6 +29,8 @@ internal static partial class SubpackageAuthGenerateTokenCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-token", @"Generate auth token
@@ -55,6 +57,7 @@ Generates an auth token for authenticating your requests");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

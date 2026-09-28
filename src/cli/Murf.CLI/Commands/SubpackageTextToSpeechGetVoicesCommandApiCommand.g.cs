@@ -39,6 +39,8 @@ internal static partial class SubpackageTextToSpeechGetVoicesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-voices", @"List Voices
@@ -76,6 +78,7 @@ Returns a list of available voices for speech synthesis");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

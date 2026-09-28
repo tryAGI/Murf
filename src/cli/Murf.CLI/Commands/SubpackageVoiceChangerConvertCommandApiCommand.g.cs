@@ -157,6 +157,8 @@ Example 2: '{""2022"": {""type"": ""SAY_AS"", ""pronunciation"": ""twenty twenty
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"convert", @"Voice Changer
@@ -257,6 +259,7 @@ Returns a url to the generated audio file along with other associated properties
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

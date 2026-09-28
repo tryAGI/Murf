@@ -145,6 +145,8 @@ Valid values: ""en-US"", ""en-UK"", ""es-ES"", etc. Use the GET /v1/speech/voice
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate", @"Synthesize Speech
@@ -244,6 +246,7 @@ Returns a url to the generated audio file along with other associated properties
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }
