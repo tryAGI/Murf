@@ -77,9 +77,9 @@ internal static partial class SubpackageDubbingSubpackageDubbingProjectsCreateDu
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-dubbing-project", @"Create");
+        var command = new Command(commandName ?? @"create-dubbing-project", @"Create");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(SourceLocale);
                         command.Options.Add(DubbingType);

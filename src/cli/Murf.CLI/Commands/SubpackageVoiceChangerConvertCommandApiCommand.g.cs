@@ -159,9 +159,9 @@ Example 2: '{""2022"": {""type"": ""SAY_AS"", ""pronunciation"": ""twenty twenty
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"convert", @"Voice Changer
+        var command = new Command(commandName ?? @"convert", @"Voice Changer
 Returns a url to the generated audio file along with other associated properties.");
                         command.Options.Add(AudioDuration);
                         command.Options.Add(ChannelType);

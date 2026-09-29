@@ -31,9 +31,9 @@ internal static partial class SubpackageDubbingSubpackageDubbingLanguagesListSou
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-source-languages", @"List Source Languages");
+        var command = new Command(commandName ?? @"list-source-languages", @"List Source Languages");
 
 
 

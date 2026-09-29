@@ -43,9 +43,9 @@ internal static partial class SubpackageTextTranslateCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"translate", @"Translate");
+        var command = new Command(commandName ?? @"translate", @"Translate");
                         command.Options.Add(TargetLanguage);
                         command.Options.Add(Texts);
 
