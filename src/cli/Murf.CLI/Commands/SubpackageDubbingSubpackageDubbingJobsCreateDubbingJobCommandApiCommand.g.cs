@@ -94,9 +94,9 @@ internal static partial class SubpackageDubbingSubpackageDubbingJobsCreateDubbin
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-dubbing-job", @"Create");
+        var command = new Command(commandName ?? @"create-dubbing-job", @"Create");
                         command.Options.Add(File);
                         command.Options.Add(FileUrl);
                         command.Options.Add(SourceLocale);

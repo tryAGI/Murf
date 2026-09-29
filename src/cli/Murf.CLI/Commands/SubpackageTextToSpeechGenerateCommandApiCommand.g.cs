@@ -147,9 +147,9 @@ Valid values: ""en-US"", ""en-UK"", ""es-ES"", etc. Use the GET /v1/speech/voice
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"generate", @"Synthesize Speech
+        var command = new Command(commandName ?? @"generate", @"Synthesize Speech
 Returns a url to the generated audio file along with other associated properties.");
                         command.Options.Add(AudioDuration);
                         command.Options.Add(ChannelType);

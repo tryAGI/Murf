@@ -35,9 +35,9 @@ internal static partial class SubpackageDubbingSubpackageDubbingJobsGetStatusCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-status", @"Get Status");
+        var command = new Command(commandName ?? @"get-status", @"Get Status");
                         command.Arguments.Add(JobId);
 
 

@@ -41,9 +41,9 @@ internal static partial class SubpackageTextToSpeechGetVoicesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-voices", @"List Voices
+        var command = new Command(commandName ?? @"get-voices", @"List Voices
 Returns a list of available voices for speech synthesis");
                         command.Options.Add(Model);
                         command.Options.Add(Token);

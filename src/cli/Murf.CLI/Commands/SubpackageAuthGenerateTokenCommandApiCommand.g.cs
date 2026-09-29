@@ -31,9 +31,9 @@ internal static partial class SubpackageAuthGenerateTokenCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"generate-token", @"Generate auth token
+        var command = new Command(commandName ?? @"generate-token", @"Generate auth token
 Generates an auth token for authenticating your requests");
 
 

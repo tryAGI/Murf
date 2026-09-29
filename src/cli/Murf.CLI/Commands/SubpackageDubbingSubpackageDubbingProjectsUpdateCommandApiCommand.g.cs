@@ -42,9 +42,9 @@ internal static partial class SubpackageDubbingSubpackageDubbingProjectsUpdateCo
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update", @"Update");
+        var command = new Command(commandName ?? @"update", @"Update");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(TargetLocales);
 

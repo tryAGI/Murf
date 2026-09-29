@@ -41,9 +41,9 @@ internal static partial class SubpackageDubbingSubpackageDubbingProjectsListComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list", @"List");
+        var command = new Command(commandName ?? @"list", @"List");
                         command.Options.Add(Limit);
                         command.Options.Add(Next);
 
