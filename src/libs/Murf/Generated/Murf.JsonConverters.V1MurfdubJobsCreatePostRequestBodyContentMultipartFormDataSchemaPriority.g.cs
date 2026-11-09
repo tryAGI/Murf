@@ -18,7 +18,7 @@ namespace Murf.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Murf.V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriorityExtensions.ToEnum(stringValue) ?? default;
+                        return global::Murf.V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriorityExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::Murf.V1MurfdubJobsCreatePostRequestBodyContentMultipartFormDataSchemaPriority.");
                     }
 
                     break;

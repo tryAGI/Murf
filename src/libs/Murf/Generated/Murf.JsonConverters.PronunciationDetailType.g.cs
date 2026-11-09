@@ -18,7 +18,7 @@ namespace Murf.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Murf.PronunciationDetailTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Murf.PronunciationDetailTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::Murf.PronunciationDetailType.");
                     }
 
                     break;
