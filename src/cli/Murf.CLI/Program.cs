@@ -18,5 +18,6 @@ rootCommand.Subcommands.Add(SubpackageDubbingSubpackageDubbingProjectsApiGroupCo
 rootCommand.Subcommands.Add(SubpackageTextApiGroupCommand.Create());
 rootCommand.Subcommands.Add(SubpackageTextToSpeechApiGroupCommand.Create());
 rootCommand.Subcommands.Add(SubpackageVoiceChangerApiGroupCommand.Create());
+rootCommand.Subcommands.Add(CliCompletion.CreateCommand(rootCommand, @"murf"));
 
 return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);
