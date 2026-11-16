@@ -359,19 +359,19 @@ namespace Murf
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::Murf.GenerateTokenResponse2? __value_401 = null;
+                                global::Murf.GenerateTokenResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::Murf.GenerateTokenResponse2.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::Murf.GenerateTokenResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::Murf.GenerateTokenResponse2.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = global::Murf.GenerateTokenResponse.FromJson(__content_401, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -380,7 +380,7 @@ namespace Murf
                                 }
 
 
-                                throw global::Murf.ApiException<global::Murf.GenerateTokenResponse2>.Create(
+                                throw global::Murf.ApiException<global::Murf.GenerateTokenResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -396,19 +396,19 @@ namespace Murf
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::Murf.GenerateTokenResponse3? __value_503 = null;
+                                global::Murf.GenerateTokenResponse? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::Murf.GenerateTokenResponse3.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::Murf.GenerateTokenResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::Murf.GenerateTokenResponse3.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::Murf.GenerateTokenResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -417,7 +417,7 @@ namespace Murf
                                 }
 
 
-                                throw global::Murf.ApiException<global::Murf.GenerateTokenResponse3>.Create(
+                                throw global::Murf.ApiException<global::Murf.GenerateTokenResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,

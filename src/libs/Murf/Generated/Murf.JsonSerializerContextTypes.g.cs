@@ -246,247 +246,67 @@ namespace Murf
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.StreamResponse2? Type52 { get; set; }
+        public global::Murf.GenerateResponse? Type52 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.StreamResponse3? Type53 { get; set; }
+        public global::System.Collections.Generic.IList<global::Murf.ApiVoice>? Type53 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.StreamResponse4? Type54 { get; set; }
+        public global::Murf.GetVoicesResponse? Type54 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.StreamResponse5? Type55 { get; set; }
+        public global::Murf.ConvertResponse? Type55 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.GenerateResponse? Type56 { get; set; }
+        public global::Murf.TranslateResponse? Type56 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.GenerateResponse2? Type57 { get; set; }
+        public global::Murf.GenerateTokenResponse? Type57 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.GenerateResponse3? Type58 { get; set; }
+        public global::System.Collections.Generic.IList<global::Murf.LocaleResponse>? Type58 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.GenerateResponse4? Type59 { get; set; }
+        public global::Murf.ListDestinationLanguagesResponse? Type59 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.GenerateResponse5? Type60 { get; set; }
+        public global::System.Collections.Generic.IList<global::Murf.SourceLocaleResponse>? Type60 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Murf.ApiVoice>? Type61 { get; set; }
+        public global::Murf.ListSourceLanguagesResponse? Type61 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.GetVoicesResponse? Type62 { get; set; }
+        public global::Murf.CreateDubbingJobResponse? Type62 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.GetVoicesResponse2? Type63 { get; set; }
+        public global::Murf.CreateDubbingJobWithProjectIdResponse? Type63 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.GetVoicesResponse3? Type64 { get; set; }
+        public global::Murf.GetStatusResponse? Type64 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.GetVoicesResponse4? Type65 { get; set; }
+        public global::Murf.CreateDubbingProjectResponse? Type65 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.ConvertResponse? Type66 { get; set; }
+        public global::Murf.ListResponse? Type66 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Murf.ConvertResponse2? Type67 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ConvertResponse3? Type68 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ConvertResponse4? Type69 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ConvertResponse5? Type70 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.TranslateResponse? Type71 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.TranslateResponse2? Type72 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.TranslateResponse3? Type73 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.TranslateResponse4? Type74 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.TranslateResponse5? Type75 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.GenerateTokenResponse? Type76 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.GenerateTokenResponse2? Type77 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.GenerateTokenResponse3? Type78 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Murf.LocaleResponse>? Type79 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListDestinationLanguagesResponse? Type80 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListDestinationLanguagesResponse2? Type81 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListDestinationLanguagesResponse3? Type82 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListDestinationLanguagesResponse4? Type83 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Murf.SourceLocaleResponse>? Type84 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListSourceLanguagesResponse? Type85 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListSourceLanguagesResponse2? Type86 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListSourceLanguagesResponse3? Type87 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListSourceLanguagesResponse4? Type88 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingJobResponse? Type89 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingJobResponse2? Type90 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingJobResponse3? Type91 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingJobResponse4? Type92 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingJobWithProjectIdResponse? Type93 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingJobWithProjectIdResponse2? Type94 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingJobWithProjectIdResponse3? Type95 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingJobWithProjectIdResponse4? Type96 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.GetStatusResponse? Type97 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.GetStatusResponse2? Type98 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.GetStatusResponse3? Type99 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.GetStatusResponse4? Type100 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingProjectResponse? Type101 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingProjectResponse2? Type102 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingProjectResponse3? Type103 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.CreateDubbingProjectResponse4? Type104 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListResponse? Type105 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListResponse2? Type106 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListResponse3? Type107 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.ListResponse4? Type108 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.UpdateResponse? Type109 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.UpdateResponse2? Type110 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.UpdateResponse3? Type111 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::Murf.UpdateResponse4? Type112 { get; set; }
+        public global::Murf.UpdateResponse? Type67 { get; set; }
 
         /// <summary>
         ///

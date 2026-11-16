@@ -41,7 +41,7 @@ namespace Murf
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider?.Value ?? global::Murf.SubpackageTextToSpeechSourceGenerationContext.Default;
+            get => JsonSerializerContextProvider?.Value ?? global::Murf.SourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 
