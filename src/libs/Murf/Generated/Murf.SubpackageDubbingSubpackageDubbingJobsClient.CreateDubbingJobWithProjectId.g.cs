@@ -462,19 +462,19 @@ namespace Murf
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::Murf.CreateDubbingJobWithProjectIdResponse2? __value_403 = null;
+                                global::Murf.CreateDubbingJobWithProjectIdResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::Murf.CreateDubbingJobWithProjectIdResponse2.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Murf.CreateDubbingJobWithProjectIdResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::Murf.CreateDubbingJobWithProjectIdResponse2.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = global::Murf.CreateDubbingJobWithProjectIdResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -483,7 +483,7 @@ namespace Murf
                                 }
 
 
-                                throw global::Murf.ApiException<global::Murf.CreateDubbingJobWithProjectIdResponse2>.Create(
+                                throw global::Murf.ApiException<global::Murf.CreateDubbingJobWithProjectIdResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -499,19 +499,19 @@ namespace Murf
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::Murf.CreateDubbingJobWithProjectIdResponse3? __value_500 = null;
+                                global::Murf.CreateDubbingJobWithProjectIdResponse? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::Murf.CreateDubbingJobWithProjectIdResponse3.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::Murf.CreateDubbingJobWithProjectIdResponse.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::Murf.CreateDubbingJobWithProjectIdResponse3.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::Murf.CreateDubbingJobWithProjectIdResponse.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -520,7 +520,7 @@ namespace Murf
                                 }
 
 
-                                throw global::Murf.ApiException<global::Murf.CreateDubbingJobWithProjectIdResponse3>.Create(
+                                throw global::Murf.ApiException<global::Murf.CreateDubbingJobWithProjectIdResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -536,19 +536,19 @@ namespace Murf
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::Murf.CreateDubbingJobWithProjectIdResponse4? __value_503 = null;
+                                global::Murf.CreateDubbingJobWithProjectIdResponse? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::Murf.CreateDubbingJobWithProjectIdResponse4.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::Murf.CreateDubbingJobWithProjectIdResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::Murf.CreateDubbingJobWithProjectIdResponse4.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = global::Murf.CreateDubbingJobWithProjectIdResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -557,7 +557,7 @@ namespace Murf
                                 }
 
 
-                                throw global::Murf.ApiException<global::Murf.CreateDubbingJobWithProjectIdResponse4>.Create(
+                                throw global::Murf.ApiException<global::Murf.CreateDubbingJobWithProjectIdResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,

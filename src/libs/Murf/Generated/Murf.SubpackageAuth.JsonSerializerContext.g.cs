@@ -19,8 +19,6 @@ namespace Murf
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Murf.AuthTokenResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Murf.GenerateTokenResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Murf.GenerateTokenResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Murf.GenerateTokenResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
     internal sealed partial class SubpackageAuthSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
